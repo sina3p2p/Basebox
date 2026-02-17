@@ -1,6 +1,6 @@
 #!/bin/zsh
 
-function docker-pick-clean() {
+function docker-clean() {
     # Get all containers in a clean list
     local containers=($(docker ps -a --format "{{.Names}}"))
     
