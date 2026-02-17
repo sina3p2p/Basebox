@@ -9,7 +9,7 @@ Currently features `rnclean.sh`: a lightning-fast cleanup script to safely wipe 
 Open your macOS Terminal and paste this entire block. It downloads the latest version of **Basebox**, extracts it to a hidden folder (`~/.basebox`), and configures Zsh to load every script inside it:
 
 ```bash
-curl -L [https://github.com/sina3p2p/basebox/archive/refs/heads/main.zip](https://github.com/sina3p2p/basebox/archive/refs/heads/main.zip) -o basebox.zip && unzip -q basebox.zip && rm -rf ~/.basebox && mv basebox-main ~/.basebox && rm basebox.zip && grep -q "basebox" ~/.zshrc || echo '\n# Load all Basebox Scripts\nfor script in ~/.basebox/*.sh; do source "$script"; done' >> ~/.zshrc && source ~/.zshrc
+curl -L https://github.com/sina3p2p/basebox/archive/refs/heads/main.zip -o basebox.zip && unzip -q basebox.zip && rm -rf ~/.basebox && mv basebox-main ~/.basebox && rm basebox.zip && grep -q "basebox" ~/.zshrc || echo '\n# Load all Basebox Scripts\nif [ -d "$HOME/.basebox" ]; then\n  for script in $HOME/.basebox/*.sh(N); do\n    source "$script"\n  done\nfi' >> ~/.zshrc && source ~/.zshrc
 ```
 
 ## 🛠️ Usage
@@ -30,11 +30,13 @@ When you run `rnclean`, it safely executes the following steps to give you a cle
 
 ## 🔄 How to Update
 
-To download the latest scripts and replace your local copies, just run the installation command again. It will safely overwrite your old scripts while keeping your `.zshrc` clean:
+Once **Basebox** is installed, you don't need to copy long commands anymore. To get the latest scripts and tools from GitHub, simply run:
 
 ```bash
-curl -L [https://github.com/sina3p2p/basebox/archive/refs/heads/main.zip](https://github.com/sina3p2p/basebox/archive/refs/heads/main.zip) -o basebox.zip && unzip -q basebox.zip && rm -rf ~/.basebox && mv basebox-main ~/.basebox && rm basebox.zip && source ~/.zshrc
+update-basebox
 ```
+
+*Note: This command completely replaces your local `~/.basebox` folder with the latest version from GitHub.*
 
 ## 📄 License
 
