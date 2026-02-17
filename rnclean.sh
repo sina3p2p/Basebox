@@ -4,14 +4,12 @@
 function rnclean() {
   echo "🧹 Cleaning React Native project..."
   
-  echo "1/3: Clearing Metro bundler cache..."
-  rm -rf /tmp/metro-*
-  
-  echo "2/3: Deleting local Android build folders..."
+  echo "1/2: Deleting local Android build folders..."
   rm -rf android/app/build
   rm -rf android/.gradle
+  rm -rf android/app/.cxx
   
-  echo "3/3: Deleting local iOS build folders..."
+  echo "2/2: Deleting local iOS build folders..."
   rm -rf ios/build
   
   echo "✨ Done! Reclaimed space and ready for a fresh build."
