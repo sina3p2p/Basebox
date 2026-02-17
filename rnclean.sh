@@ -1,7 +1,7 @@
 #!/bin/zsh
 
 # Safely clean React Native project caches and build folders
-function rnclean() {
+function rn-clean() {
   echo "🧹 Cleaning React Native project..."
   
   echo "1/2: Deleting local Android build folders..."
