@@ -23,8 +23,6 @@ rnclean
 ## 🗑️ What exactly does `rnclean` delete?
 
 When you run `rnclean`, it safely executes the following steps to give you a clean slate without touching your actual code:
-* **Watchman:** Clears stalled file watchers using `watchman watch-del-all`.
-* **Metro Bundler:** Wipes `/tmp/metro-*` cache files.
 * **Android Caches:** Removes `android/app/build` and `android/.gradle`.
 * **iOS Caches:** Removes `ios/build`.
 
