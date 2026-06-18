@@ -9,8 +9,9 @@ function rn-clean() {
   rm -rf android/.gradle
   rm -rf android/app/.cxx
   
-  echo "2/2: Deleting local iOS build folders..."
+  echo "2/2: Deleting local iOS build folders and Pods..."
   rm -rf ios/build
+  rm -rf ios/Pods
   
   echo "✨ Done! Reclaimed space and ready for a fresh build."
 }
